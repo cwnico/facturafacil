@@ -9,21 +9,21 @@ class WSFEV1{
   const PROXY_ENABLE = false;
   const LOG_XMLS = false;
 
-
 #TESTING
   const CERT = "/keys/cwcert.crt";        		  # The X.509 certificate in PEM format
   const PRIVATEKEY = "/keys/cwkey.key";           # La clave privada
   const WSDL = "/wsfev1test.wsdl";                # WSDL TESTING
   const WSFEURL = "https://wswhomo.afip.gov.ar/wsfev1/service.asmx"; // testing
 
-/*
 
+/*
 #PRODUCCION
-  const PRIVATEKEY = "/keys/carabajal.key";         # La clave privada
-  const CERT = "/keys/carabajal.crt";        	  # The X.509 certificate in PEM format
+  const PRIVATEKEY = "/keys/carabajalraul.key";         # La clave privada
+  const CERT = "/keys/carabajraul.crt";        	  # The X.509 certificate in PEM format
   const WSDL = "/wsfev1prod.wsdl";                # WSDL PRODUCCION
   const WSFEURL = "https://servicios1.afip.gov.ar/wsfev1/service.asmx"; // PRODUCCION
 */
+
 
 
   /*
@@ -260,16 +260,16 @@ class WSFEV1{
                 'DocNro' => $nrodoc,
                 'CbteDesde' => $renglon['nrofactura'],
                 'CbteHasta' => $renglon['nrofactura'],
-                'CbteFch' => date('Ymd'),
+                'CbteFch' => $renglon['fechaemision'],
                 'ImpTotal' => round($renglon['importetotal'], 2),
                 'ImpTotConc' => round($renglon['capitalafinanciar'], 2),
                 'ImpNeto' => round($neto, 2),
                 'ImpOpEx' => 0.00,
                 'ImpTrib' => 0.00,
                 'ImpIVA' => $renglon['importeiva'],
-                'FchServDesde' => '',
-                'FchServHasta' => '',
-                'FchVtoPago' => '',
+                'FchServDesde' => $renglon['fechadesde'],
+                'FchServHasta' => $renglon['fechahasta'],
+                'FchVtoPago' => $renglon['fechahasta'],
                 'MonId' => "PES",
                 'MonCotiz' => "1.00",
                 'Iva' => $detalleiva
@@ -282,16 +282,16 @@ class WSFEV1{
                 'DocNro' => $nrodoc,
                 'CbteDesde' => $renglon['nrofactura'],
                 'CbteHasta' => $renglon['nrofactura'],
-                'CbteFch' => date('Ymd'),
+                'CbteFch' => $renglon['fechaemision'],
                 'ImpTotal' => round($renglon['importetotal'], 2),
                 'ImpTotConc' => round($renglon['capitalafinanciar'], 2),
                 'ImpNeto' => round($neto, 2),
                 'ImpOpEx' => 0.00,
                 'ImpTrib' => 0.00,
                 'ImpIVA' => $renglon['importeiva'],
-                'FchServDesde' => '',
-                'FchServHasta' => '',
-                'FchVtoPago' => '',
+                'FchServDesde' => $renglon['fechadesde'],
+                'FchServHasta' => $renglon['fechahasta'],
+                'FchVtoPago' => $renglon['fechahasta'],
                 'MonId' => "PES",
                 'MonCotiz' => "1.00",
             );

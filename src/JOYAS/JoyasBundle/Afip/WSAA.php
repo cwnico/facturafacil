@@ -9,17 +9,17 @@ class WSAA {
   const PROXY_ENABLE = false;
 
 # TESTING
-  const WSDL = "/wsaa.wsdl";      	     	# The WSDL corresponding to WSAA PROD
+  const WSDL = "/wsaa.wsdl";              # The WSDL corresponding to WSAA PROD
   const URL = "https://wsaahomo.afip.gov.ar/ws/services/LoginCms"; // testing
-  const CERT = "//keys//cwcert.crt";        	# The X.509 certificate in PEM format
-  const PRIVATEKEY = "//keys//cwkey.key";  	# The private key correspoding to CERT (PEM)
-
+  const CERT = "//keys//cwcert.crt";          # The X.509 certificate in PEM format
+  const PRIVATEKEY = "//keys//cwkey.key";   # The private key correspoding to CERT (PEM)
 /*
+
 # PRODUCCION
-  const WSDL = "/wsaaprod.wsdl";      	     					# The WSDL corresponding to WSAA PROD
+  const WSDL = "/wsaaprod.wsdl";                      # The WSDL corresponding to WSAA PROD
   const URL = "https://wsaa.afip.gov.ar/ws/services/LoginCms"; // produccion  
-  const CERT = "/keys/carabajal.crt";        	  # The X.509 certificate in PEM format
-  const PRIVATEKEY = "/keys/carabajal.key";         # La clave privada
+  const CERT = "//keys//carabajraul.crt";           # The X.509 certificate in PEM format
+  const PRIVATEKEY = "//keys//carabajalraul.key";         # La clave privada
 */
 
   /*
